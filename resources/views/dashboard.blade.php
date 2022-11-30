@@ -8,57 +8,37 @@
 
 @section('content')
     <div class="small-box bg-info">
-        <div class="inner">
-            <h3>150</h3>
-            <p>New Orders</p>
+        <div class="inner" style="  text-align: center;">
+            <p>Jumlah Data Keluarga</p>
+            <h1><b>150</b></h1>
         </div>
-        <div class="icon">
+        {{-- <div class="icon">
             <i class="fas fa-shopping-cart"></i>
-        </div>
-        <a href="#" class="small-box-footer">
-            More info <i class="fas fa-arrow-circle-right"></i>
-        </a>
+        </div> --}}
+
     </div>
     <div class="row">
-        <div class="col-md-4 col-sm-6 col-12">
+        <div class="col-md-6 col-sm-6 col-12">
             <div class="info-box bg-success">
                 <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
                 <div class="info-box-content">
-                    <span class="info-box-text">Likes</span>
-                    <span class="info-box-number">41,410</span>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 70%"></div>
-                    </div>
-                    <span class="progress-description">
-                        70% Increase in 30 Days
+                    <span class="info-box-text">Jumlah Keluarga Miskin</span>
+                    <span class="info-box-number" style="font-size: 30px"><b>41</b></span>
+              
+                    <span >
+                        Keluarga yang tidak memenuhi salah satu dari 6 (enam) indikator Keluarga Sejahtera I (KS I) atau indikator ”kebutuhan dasar keluarga” (basic needs).
                     </span>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-6 col-12">
+
+        <div class="col-md-6 col-sm-6 col-12">
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="far fa-bookmark"></i></span>
                 <div class="info-box-content">
-                    <span class="info-box-text">Bookmarks</span>
+                    <span class="info-box-text">Keluarga Sejahtera I</span>
                     <span class="info-box-number">41,410</span>
-                    <div class="progress">
-                        <div class="progress-bar bg-info" style="width: 70%"></div>
-                    </div>
-                    <span class="progress-description">
-                        70% Increase in 30 Days
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-12">
-            <div class="info-box">
-                <span class="info-box-icon bg-info"><i class="far fa-bookmark"></i></span>
-                <div class="info-box-content">
-                    <span class="info-box-text">Bookmarks</span>
-                    <span class="info-box-number">41,410</span>
-                    <div class="progress">
-                        <div class="progress-bar bg-info" style="width: 70%"></div>
-                    </div>
+            
                     <span class="progress-description">
                         70% Increase in 30 Days
                     </span>
@@ -71,11 +51,9 @@
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="far fa-bookmark"></i></span>
                 <div class="info-box-content">
-                    <span class="info-box-text">Bookmarks</span>
+                    <span class="info-box-text">Keluarga Sejahtera II</span>
                     <span class="info-box-number">41,410</span>
-                    <div class="progress">
-                        <div class="progress-bar bg-info" style="width: 70%"></div>
-                    </div>
+            
                     <span class="progress-description">
                         70% Increase in 30 Days
                     </span>
@@ -86,11 +64,9 @@
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="far fa-bookmark"></i></span>
                 <div class="info-box-content">
-                    <span class="info-box-text">Bookmarks</span>
+                    <span class="info-box-text">Keluarga Sejahtera III</span>
                     <span class="info-box-number">41,410</span>
-                    <div class="progress">
-                        <div class="progress-bar bg-info" style="width: 70%"></div>
-                    </div>
+            
                     <span class="progress-description">
                         70% Increase in 30 Days
                     </span>
