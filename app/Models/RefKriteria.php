@@ -11,6 +11,6 @@ class RefKriteria extends Model
     protected $table = 'ref_kriteria';
 
     protected $fillable = [
-        'nama', 'bobot', 'ref_kriteria_id', 'created_at', 'updated_at', 'deleted_at',
+        'nama', 'bobot', 'created_at', 'updated_at', 'deleted_at',
     ];
 }
