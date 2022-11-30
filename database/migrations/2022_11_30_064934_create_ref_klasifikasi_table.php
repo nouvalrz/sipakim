@@ -16,7 +16,7 @@ class CreateRefKlasifikasiTable extends Migration
         Schema::create('ref_klasifikasi', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->float('ranking');
+            $table->string('ranking');
             $table->timestamps();
             $table->softDeletes();
         });

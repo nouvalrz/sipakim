@@ -16,7 +16,7 @@ class CreateAnalisaKeluargaTable extends Migration
         Schema::create('analisa_keluarga', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('potensi_keluarga_id');
-            $table->bigInteger('hasil_perhitungan');
+            $table->float('hasil_perhitungan');
             $table->bigInteger('ref_klasifikasi_id');
             $table->timestamps();
             $table->softDeletes();
