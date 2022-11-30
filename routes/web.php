@@ -17,6 +17,25 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/input-data-keluarga', function () {
+    return view('input-data-keluarga');
+});
+
+Route::get('/data-keluarga-miskin', function () {
+    return view('data-keluarga-miskin');
+});
+
+Route::get('/informasi-statistik', function () {
+    return view('informasi-statistik');
+});
+Route::get('/profile/settings', function () {
+    return view('profile');
+});
+
 //Auth::routes();
 //
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -328,14 +328,14 @@ return [
         ],
         [
             'text'        => 'Informasi Statistik',
-            'url'         => 'admin/informasi-statistik',
+            'url'         => '/informasi-statistik',
 //            'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'url'  => 'profile/settings',
             'icon' => 'fas fa-fw fa-user',
 
         ],
