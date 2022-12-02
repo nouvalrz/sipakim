@@ -578,6 +578,174 @@
                         </div>
 
 
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputRumahTangga-SaranaAirBersih" class="col-sm-3 col-form-label">Sarana Air Bersih</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputRumahTangga-SaranaAirBersih" placeholder="Pilih Sarana Air Bersih">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputRumahTangga-KemampuanBerobat" class="col-sm-3 col-form-label">Kemampuan Berobat</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputRumahTangga-KemampuanBerobat" placeholder="Pilih Kemampuan Berobat">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputRumahTangga-JenisJamban" class="col-sm-3 col-form-label">Jenis Jamban</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputRumahTangga-JenisJamban" placeholder="Pilih Jenis Jamban">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputRumahTangga-Septitank" class="col-sm-3 col-form-label">Jenis Septitank</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputRumahTangga-Septitank" placeholder="Pilih Jenis Septitank">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputRumahTangga-BahanBakar" class="col-sm-3 col-form-label">Bahan Bakar</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputRumahTangga-BahanBakar" placeholder="Pilih Bahan Bakar">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputRumahTangga-JenisPembuangan" class="col-sm-3 col-form-label">Jenis Pembuangan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputRumahTangga-JenisPembuangan" placeholder="Pilih Jenis Pembuangan">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputRumahTangga-Pemilahan" class="col-sm-3 col-form-label">Jenis Pemilahan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputRumahTangga-Pemilahan" placeholder="Pilih Jenis Pemilahan">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputRumahTangga-KepemilikanTabungan" class="col-sm-3 col-form-label">Kepemilikan Tabungan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputRumahTangga-KepemilikanTabungan" placeholder="Pilih Kepemilikan Tabungan">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputRumahTangga-KepemilikanEmas" class="col-sm-3 col-form-label">Kepemilikan Emas</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputRumahTangga-KepemilikanEmas" placeholder="Pilih Kepemilikan Emas">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputRumahTangga-SarprasKeluarga" class="col-sm-3 col-form-label">Sarana/Prasarana Keluarga</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputRumahTangga-SarprasKeluarga" placeholder="Pilih Sarpras Keluarga">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputRumahTangga-BeliPakaian" class="col-sm-3 col-form-label">Kemampuan Beli Pakaian per Tahun</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputRumahTangga-BeliPakaian" placeholder="Masukkan Kemampuan Beli Pakaian per Tahun">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Input Informasi Pendapatan Keluarga</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="card-body" style="display: none;">
+                    <form>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputPendapatan-Suami" class="col-sm-3 col-form-label">Pendapatan Suami</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputPendapatan-Suami" placeholder="Masukkan Pendapatan Suami">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputPendapatan-Istri" class="col-sm-3 col-form-label">Pendapatan Istri</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputPendapatan-Istri" placeholder="Masukkan Pendapatan Istri">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputPendapatan-Anak" class="col-sm-3 col-form-label">Pendapatan Anak</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputPendapatan-Anak" placeholder="Masukkan Pendapatan Anak">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputPendapatan-OrangTua" class="col-sm-3 col-form-label">Pendapatan Orang Tua</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputPendapatan-OrangTua" placeholder="Masukkan Pendapatan Orang Tua">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
 
                     </form>
 
