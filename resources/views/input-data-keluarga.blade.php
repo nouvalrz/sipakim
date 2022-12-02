@@ -260,5 +260,330 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Input Informasi Kepemilikan Ternak Kecil</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="card-body" style="display: none;">
+                    <form>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputTernak-Ayam" class="col-sm-3 col-form-label">Ternak Ayam</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputTernak-Ayam" placeholder="Jumlah Ternak Ayam">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputTernak-Bebek" class="col-sm-3 col-form-label">Ternak Bebek</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputTernak-Bebek" placeholder="Jumlah Ternak Bebek">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputTernak-Itik" class="col-sm-3 col-form-label">Ternak Itik</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputTernak-Itik" placeholder="Jumlah Ternak Itik">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputTernak-Angsa" class="col-sm-3 col-form-label">Ternak Angsa</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputTernak-Angsa" placeholder="Jumlah Ternak Angsa">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputTernak-Lainnya" class="col-sm-3 col-form-label">Ternak Lainnya</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputTernak-Lainnya" placeholder="Jumlah Ternak Lainnya">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputTernak-StatusKepemilikan" class="col-sm-3 col-form-label">Status Kepemilikan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputTernak-StatusKepemilikan" placeholder="Pilih Status Kepemilikan">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Input Informasi Kepemilikan Lahan Sawah</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="card-body" style="display: none;">
+                    <form>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputSawah-Ukuran" class="col-sm-3 col-form-label">Ukuran Sawah</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputSawah-Ukuran" placeholder="Ukuran Lahan Sawah">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputSawah-StatusKepemilikan" class="col-sm-3 col-form-label">Status Kepemilikan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputSawah-StatusKepemilikan" placeholder="Pilih Status Kepemilikan">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputSawah-StatusPengelolaan" class="col-sm-3 col-form-label">Status Pengelolaan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputSawah-StatusPengelolaan" placeholder="Pilih Status Pengelolaan">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Input Informasi Kepemilikan Lahan Kebun</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="card-body" style="display: none;">
+                    <form>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputKebun-Ukuran" class="col-sm-3 col-form-label">Ukuran Kebun</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputKebun-Ukuran" placeholder="Ukuran Lahan Kebun">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputKebun-StatusKepemilikan" class="col-sm-3 col-form-label">Status Kepemilikan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputKebun-StatusKepemilikan" placeholder="Pilih Status Kepemilikan">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputKebun-StatusPengelolaan" class="col-sm-3 col-form-label">Status Pengelolaan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputKebun-StatusPengelolaan" placeholder="Pilih Status Pengelolaan">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Input Informasi Kepemilikan Lahan Tegalan</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="card-body" style="display: none;">
+                    <form>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputTegalan-Ukuran" class="col-sm-3 col-form-label">Ukuran Tegalan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputTegalan-Ukuran" placeholder="Ukuran Lahan Tegalan">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputTegalan-StatusKepemilikan" class="col-sm-3 col-form-label">Status Kepemilikan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputTegalan-StatusKepemilikan" placeholder="Pilih Status Kepemilikan">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputTegalan-StatusPengelolaan" class="col-sm-3 col-form-label">Status Pengelolaan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputTegalan-StatusPengelolaan" placeholder="Pilih Status Pengelolaan">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Input Informasi Kepemilikan Lahan Tambak</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="card-body" style="display: none;">
+                    <form>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputTambak-Ukuran" class="col-sm-3 col-form-label">Ukuran Tambak</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputTambak-Ukuran" placeholder="Ukuran Lahan Tambak">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputTambak-StatusKepemilikan" class="col-sm-3 col-form-label">Status Kepemilikan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputTambak-StatusKepemilikan" placeholder="Pilih Status Kepemilikan">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputTambak-StatusPengelolaan" class="col-sm-3 col-form-label">Status Pengelolaan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputTambak-StatusPengelolaan" placeholder="Pilih Status Pengelolaan">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Input Informasi Pendukung Rumah Tangga</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="card-body" style="display: none;">
+                    <form>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="inputRumahTangga-Transportasi" class="col-sm-3 col-form-label">Alat Transportasi</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputRumahTangga-Transportasi" placeholder="Pilih Alat Transportasi">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputRumahTangga-Penerbangan" class="col-sm-3 col-form-label">Alat Penerbangan</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputRumahTangga-Penerbangan" placeholder="Pilih Alat Penerbangan">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label for="InputRumahTangga-DayaListrik" class="col-sm-3 col-form-label">Daya Listrik</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="InputRumahTangga-DayaListrik" placeholder="Pilih Daya Listrik">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 @stop
