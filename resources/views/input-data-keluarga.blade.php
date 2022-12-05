@@ -50,34 +50,15 @@
                                     @error('nik') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('kecamatan') is-invalid @enderror" name="kecamatan" id="inputKecamatan" placeholder="Kecamatan">
-                                    @error('kecamatan') <span class="text-danger">{{$message}}</span> @enderror
-                                </div>
-                            </div>
-                            <div class="col-1">
-                                <div class="form-group">
-                                    <input type="text" class="form-control @error('kelurahan') is-invalid @enderror" name="kelurahan" id="inputKelurahan" placeholder="Kelurahan">
-                                    @error('kelurahan') <span class="text-danger">{{$message}}</span> @enderror
-                                </div>
-                            </div>
-                            <div class="col-1">
-                                <div class="form-group">
-                                    <input type="text" class="form-control @error('lingkungan') is-invalid @enderror" name="lingkungan" id="inputLingkungan" placeholder="Lingkungan">
-                                    @error('lingkungan') <span class="text-danger">{{$message}}</span> @enderror
-                                </div>
-                            </div>
-                            <div class="col-1">
-                                <div class="form-group">
-                                    <input type="text" class="form-control @error('rw') is-invalid @enderror" name="rw" id="inputRW" placeholder="RW">
-                                    @error('rw') <span class="text-danger">{{$message}}</span> @enderror
-                                </div>
-                            </div>
-                            <div class="col-1">
-                                <div class="form-group">
-                                    <input type="text" class="form-control @error('rt') is-invalid @enderror" name="rt" id="inputRT" placeholder="RT">
-                                    @error('rt') <span class="text-danger">{{$message}}</span> @enderror
+                                    <select class="form-control @error('ref_cluster_wilayah_id') is-invalid @enderror" id="inputClusterWilayah" name="ref_cluster_wilayah_id">
+                                        <option value="">Pilih Cluster Wilayah</option>
+                                        @foreach ($cluster_wilayah as $ref_cluster_wilayah)
+                                            <option value="{{ $ref_cluster_wilayah->id }}" @if (old('ref_cluster_wilayah_id') == $ref_cluster_wilayah->id) selected @endif>{{ 'RT '.$ref_cluster_wilayah->rt.' - RW '.$ref_cluster_wilayah->rw.' - Lingk. '.$ref_cluster_wilayah->lingkungan.' - Kel. '.$ref_cluster_wilayah->kelurahan.' - Kec. '.$ref_cluster_wilayah->kecamatan}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('ref_cluster_wilayah_id') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
                         </div>

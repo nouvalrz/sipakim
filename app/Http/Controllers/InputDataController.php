@@ -27,7 +27,7 @@ class InputDataController extends Controller
      */
     public function index()
     {
-        $kecamatan = RefClusterWilayah::get_kecamatan();
+        $cluster_wilayah = RefClusterWilayah::get_all();
         // Input Pendapatan
         $pendapatan = RefPendapatan::get_all();
         // Input Pendukung Rumah Tangga
@@ -48,7 +48,7 @@ class InputDataController extends Controller
         $status_milik_ternak = RefStatusKepemilikanTernak::get_all();
 
         return view('input-data-keluarga', [
-            'kecamatan' => $kecamatan,
+            'cluster_wilayah' => $cluster_wilayah,
             'pendapatan' => $pendapatan,
             'dinding' => $dinding,
             'atap' => $atap,

@@ -14,6 +14,11 @@ class RefClusterWilayah extends Model
         'rt', 'rw', 'lingkungan', 'kelurahan', 'kecamatan', 'created_at', 'updated_at', 'deleted_at',
     ];
 
+    protected function get_all()
+    {
+        return $this::get();
+    }
+
     protected function get_kecamatan()
     {
         return $this::select('kecamatan')
