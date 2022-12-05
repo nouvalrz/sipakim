@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Keluarga;
 
 class DataKeluargaController extends Controller
 {
@@ -13,7 +14,10 @@ class DataKeluargaController extends Controller
      */
     public function index()
     {
-        return view('data-keluarga-miskin');
+        $data_keluarga = Keluarga::get_all();
+        return view('data-keluarga-miskin', [
+            'data_keluarga' => $data_keluarga
+        ]);
     }
 
     /**
@@ -79,6 +83,14 @@ class DataKeluargaController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $data_keluarga = Keluarga::delete_data($id);
+        
+        if ($data_keluarga === true) {
+            return redirect()->route('data.index')
+                ->with('success_message', 'Berhasil hapus data');
+        }
+
+        return redirect()->route('data.index')
+            ->with('error_message', 'Gagal hapus data');
+    }    
 }

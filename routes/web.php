@@ -31,6 +31,9 @@ Route::prefix('input-data-keluarga')->group(function(){
 Route::prefix('data-keluarga-miskin')->group(function(){
     Route::get('/', [DataKeluargaController::class, 'index'])->name('data.index');
     Route::get('/{id}/show', [DataKeluargaController::class, 'show'])->name('data.show');
+    Route::get('/{id}/edit', [DataKeluargaController::class, 'edit'])->name('data.edit');
+    Route::put('/{id}/update', [DataKeluargaController::class, 'update'])->name('data.update');
+    Route::delete('/{id}/delete', [DataKeluargaController::class, 'destroy'])->name('data.delete');
 });
 
 Route::get('/informasi-statistik', function () {

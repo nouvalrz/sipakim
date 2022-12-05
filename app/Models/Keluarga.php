@@ -14,6 +14,11 @@ class Keluarga extends Model
         'no_kk', 'nik', 'nama_kepala', 'tempat_lahir', 'tanggal_lahir', 'cluster_wilayah_id', 'jumlah_anggota', 'created_at', 'updated_at', 'deleted_at',
     ];
 
+    protected function get_all()
+    {
+        return $this::get();
+    }
+
     protected function add_data($request)
     {
         $request->validate([
@@ -40,6 +45,18 @@ class Keluarga extends Model
             return false;
         }
         return $data;
+    }
+
+    protected function delete_data($id)
+    {
+        $keluarga = $this::Find($id);
+        $potensi_keluarga = PotensiKeluarga::where('keluarga_id', $keluarga->id)->first();
+        $analisa_keluarga = AnalisaKeluarga::where('potensi_keluarga_id', $potensi_keluarga->id)->first();
+        
+        if ($analisa_keluarga->delete() && $potensi_keluarga->delete() && $keluarga->delete()) {
+            return true;
+        }
+        return false;
     }
 
     protected function cluster_wilayah()

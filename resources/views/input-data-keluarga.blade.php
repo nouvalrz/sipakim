@@ -56,7 +56,7 @@
                                     <select class="form-control @error('cluster_wilayah_id') is-invalid @enderror" id="inputClusterWilayah" name="cluster_wilayah_id">
                                         <option value="">Pilih Cluster Wilayah</option>
                                         @foreach ($cluster_wilayah as $ref_cluster_wilayah)
-                                            <option value="{{ $ref_cluster_wilayah->id }}" @if (old('cluster_wilayah_id') == $ref_cluster_wilayah->id) selected @endif>{{ 'RT '.$ref_cluster_wilayah->rt.' - RW '.$ref_cluster_wilayah->rw.' - Lingk. '.$ref_cluster_wilayah->lingkungan.' - Kel. '.$ref_cluster_wilayah->kelurahan.' - Kec. '.$ref_cluster_wilayah->kecamatan}}</option>
+                                            <option value="{{ $ref_cluster_wilayah->id }}" @if (old('cluster_wilayah_id') == $ref_cluster_wilayah->id) selected @endif>{{ 'RT '.$ref_cluster_wilayah->rt.' - RW '.$ref_cluster_wilayah->rw.' - Lingk. '.$ref_cluster_wilayah->lingkungan.' - Kel. '.$ref_cluster_wilayah->kelurahan.' - Kec. '.$ref_cluster_wilayah->kecamatan }}</option>
                                         @endforeach
                                     </select>
                                     @error('cluster_wilayah_id') <span class="text-danger">{{$message}}</span> @enderror
