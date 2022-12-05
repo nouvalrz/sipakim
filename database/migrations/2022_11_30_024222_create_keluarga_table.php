@@ -21,7 +21,7 @@ class CreateKeluargaTable extends Migration
             $table->string('tempat_lahir')->length(20);
             $table->date('tanggal_lahir');
             $table->bigInteger('cluster_wilayah_id');
-            $table->bigInteger('jumlah_anggota_id');
+            $table->string('jumlah_anggota')->length(16);;
             $table->timestamps();
             $table->softDeletes();
         });
