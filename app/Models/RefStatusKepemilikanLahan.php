@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RefPendapatanAnak extends Model
+class RefStatusKepemilikanLahan extends Model
 {
     use HasFactory;
-    protected $table = 'ref_pendapatan_anak';
+    protected $table = 'ref_status_kepemilikan_lahan';
 
     protected $fillable = [
         'nama', 'bobot', 'ref_kriteria_id', 'created_at', 'updated_at', 'deleted_at',
