@@ -43,10 +43,8 @@ class CreatePotensiKeluargaTable extends Migration
             $table->bigInteger('ref_luas_pekarangan_id');
             $table->bigInteger('ref_ukuran_lahan_sawah_id');
             $table->bigInteger('ref_status_kepemilikan_sawah_id');
-            $table->bigInteger('ref_status_pengelolaan_sawah_id');
             $table->bigInteger('ref_ukuran_lahan_kebun_id');
             $table->bigInteger('ref_status_kepemilikan_kebun_id');
-            $table->bigInteger('ref_status_pengelolaan_kebun_id');
             $table->bigInteger('ref_kepemilikan_ternak_besar_id');
             $table->bigInteger('ref_status_kepemilikan_ternak_besar_id');
             $table->bigInteger('ref_kepemilikan_ternak_kecil_id');

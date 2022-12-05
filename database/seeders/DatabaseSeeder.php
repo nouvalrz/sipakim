@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             RefKriteriaSeeder::class,
-            RefPendapatanSeeder::class
+            RefPendapatanSeeder::class,
+            RefUkuranLahanSeeder::class
         ]);
     }
 }

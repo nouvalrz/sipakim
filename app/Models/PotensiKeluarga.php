@@ -11,7 +11,7 @@ class PotensiKeluarga extends Model
     protected $table = 'potensi_keluarga';
 
     protected $fillable = [
-        'keluarga_id', 'ref_pendapatan_suami_id', 'ref_pendapatan_istri_id', 'ref_pendapatan_anak_id', 'ref_pendapatan_orangtua_id', 'ref_alat_transportasi_id', 'ref_alat_penerangan_id', 'ref_daya_listrik_id', 'ref_sarana_air_bersih_id', 'ref_kemampuan_berobat_id', 'ref_jenis_jamban_id', 'ref_jenis_septitank_id', 'ref_bahan_bakar_id', 'ref_jenis_pembuangan_id', 'ref_jenis_pemilahan_id', 'ref_kepemilikan_tabungan_id', 'ref_kepemilikan_emas_id', 'ref_sarana_prasarana_id', 'ref_kemampuan_beli_pakaian_id', 'ref_dinding_id', 'ref_atap_id', 'ref_lantai_id', 'ref_surat_tanah_id', 'ref_status_kepemilikan_rumah_id', 'ref_ukuran_rumah_id', 'ref_luas_pekarangan_id', 'ref_ukuran_lahan_sawah_id', 'ref_status_kepemilikan_sawah_id', 'ref_status_pengelolaan_sawah_id', 'ref_ukuran_lahan_kebun_id', 'ref_status_kepemilikan_kebun_id', 'ref_status_pengelolaan_kebun_id', 'ref_kepemilikan_ternak_besar_id', 'ref_status_kepemilikan_ternak_besar_id', 'ref_kepemilikan_ternak_kecil_id', 'ref_status_kepemilikan_ternak_kecil_id', 'created_at', 'updated_at', 'deleted_at',
+        'keluarga_id', 'ref_pendapatan_suami_id', 'ref_pendapatan_istri_id', 'ref_pendapatan_anak_id', 'ref_pendapatan_orangtua_id', 'ref_alat_transportasi_id', 'ref_alat_penerangan_id', 'ref_daya_listrik_id', 'ref_sarana_air_bersih_id', 'ref_kemampuan_berobat_id', 'ref_jenis_jamban_id', 'ref_jenis_septitank_id', 'ref_bahan_bakar_id', 'ref_jenis_pembuangan_id', 'ref_jenis_pemilahan_id', 'ref_kepemilikan_tabungan_id', 'ref_kepemilikan_emas_id', 'ref_sarana_prasarana_id', 'ref_kemampuan_beli_pakaian_id', 'ref_dinding_id', 'ref_atap_id', 'ref_lantai_id', 'ref_surat_tanah_id', 'ref_status_kepemilikan_rumah_id', 'ref_ukuran_rumah_id', 'ref_luas_pekarangan_id', 'ref_ukuran_lahan_sawah_id', 'ref_status_kepemilikan_sawah_id', 'ref_ukuran_lahan_kebun_id', 'ref_status_kepemilikan_kebun_id', 'ref_kepemilikan_ternak_besar_id', 'ref_status_kepemilikan_ternak_besar_id', 'ref_kepemilikan_ternak_kecil_id', 'ref_status_kepemilikan_ternak_kecil_id', 'created_at', 'updated_at', 'deleted_at',
     ];
 
     protected function keluarga()
@@ -154,11 +154,6 @@ class PotensiKeluarga extends Model
         return $this->belongsTo('App\Models\RefStatusKepemilikanLahan', 'ref_status_kepemilikan_sawah_id');
     }
 
-    protected function ref_status_pengelolaan_sawah()
-    {
-        return $this->belongsTo('App\Models\RefStatusPengelolaanLahan', 'ref_status_pengelolaan_sawah_id');
-    }
-
     protected function ref_ukuran_lahan_kebun()
     {
         return $this->belongsTo('App\Models\RefUkuranLahan', 'ref_ukuran_lahan_kebun_id');
@@ -167,11 +162,6 @@ class PotensiKeluarga extends Model
     protected function ref_status_kepemilikan_kebun()
     {
         return $this->belongsTo('App\Models\RefStatusKepemilikanLahan', 'ref_status_kepemilikan_kebun_id');
-    }
-
-    protected function ref_status_pengelolaan_kebun()
-    {
-        return $this->belongsTo('App\Models\RefStatusPengelolaanLahan', 'ref_status_pengelolaan_kebun_id');
     }
 
     protected function ref_kepemilikan_ternak_besar()

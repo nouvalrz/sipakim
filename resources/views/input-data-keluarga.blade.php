@@ -495,17 +495,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <div class="form-group row">
-                                    <label for="InputSawah-StatusPengelolaan" class="col-sm-3 col-form-label">Status Pengelolaan</label>
-                                    <div class="col-sm-8">
-                                        <select class="form-control @error('ref_status_pengelolaan_sawah_id') is-invalid @enderror" id="inputSawah-StatusPengelolaan" name="ref_status_pengelolaan_sawah_id">
-                                            <option value="">Pilih Status Pengelolaan</option>
-                                        </select>
-                                        @error('ref_status_pengelolaan_sawah_id') <span class="text-danger">{{$message}}</span> @enderror
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                 </div>
             </div>
@@ -544,17 +533,6 @@
                                             <option value="">Pilih Status Kepemilikan</option>
                                         </select>
                                         @error('ref_status_kepemilikan_kebun_id') <span class="text-danger">{{$message}}</span> @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-group row">
-                                    <label for="InputKebun-StatusPengelolaan" class="col-sm-3 col-form-label">Status Pengelolaan</label>
-                                    <div class="col-sm-8">
-                                        <select class="form-control @error('ref_status_pengelolaan_kebun_id') is-invalid @enderror" id="inputKebun-StatusPengelolaan" name="ref_status_pengelolaan_kebun_id">
-                                            <option value="">Pilih Status Pengelolaan</option>
-                                        </select>
-                                        @error('ref_status_pengelolaan_kebun_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
                                 </div>
                             </div>
