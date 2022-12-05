@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRefStatusKepemilikanTernakKecilTable extends Migration
+class CreateRefStatusKepemilikanTernakTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateRefStatusKepemilikanTernakKecilTable extends Migration
      */
     public function up()
     {
-        Schema::create('ref_status_kepemilikan_ternak_kecil', function (Blueprint $table) {
+        Schema::create('ref_status_kepemilikan_ternak', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->float('bobot');
@@ -30,6 +30,6 @@ class CreateRefStatusKepemilikanTernakKecilTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ref_status_kepemilikan_ternak_kecil');
+        Schema::dropIfExists('ref_status_kepemilikan_ternak');
     }
 }

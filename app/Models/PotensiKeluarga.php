@@ -171,7 +171,7 @@ class PotensiKeluarga extends Model
 
     protected function ref_status_kepemilikan_ternak_besar()
     {
-        return $this->belongsTo('App\Models\RefStatusKepemilikanTernakBesar', 'ref_status_kepemilikan_ternak_besar_id');
+        return $this->belongsTo('App\Models\RefStatusKepemilikanTernak', 'ref_status_kepemilikan_ternak_besar_id');
     }
 
     protected function ref_kepemilikan_ternak_kecil()
@@ -181,6 +181,6 @@ class PotensiKeluarga extends Model
 
     protected function ref_status_kepemilikan_ternak_kecil()
     {
-        return $this->belongsTo('App\Models\RefStatusKepemilikanTernakKecil', 'ref_status_kepemilikan_ternak_kecil_id');
+        return $this->belongsTo('App\Models\RefStatusKepemilikanTernak', 'ref_status_kepemilikan_ternak_kecil_id');
     }
 }
