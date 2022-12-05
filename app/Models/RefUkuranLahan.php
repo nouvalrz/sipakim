@@ -18,4 +18,14 @@ class RefUkuranLahan extends Model
     {
         return $this->belongsTo('App\Models\RefKriteria', 'ref_kriteria_id');
     }
+
+    protected function get_all()
+    {
+        return $this::All();
+    }
+
+    protected function get_by_id($id)
+    {
+        return $this::Find($id);
+    }
 }

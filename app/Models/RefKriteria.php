@@ -13,4 +13,14 @@ class RefKriteria extends Model
     protected $fillable = [
         'nama', 'bobot', 'created_at', 'updated_at', 'deleted_at',
     ];
+
+    protected function get_all()
+    {
+        return $this::All();
+    }
+
+    protected function get_by_id($id)
+    {
+        return $this::Find($id);
+    }
 }
