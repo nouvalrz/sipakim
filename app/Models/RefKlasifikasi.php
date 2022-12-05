@@ -11,8 +11,13 @@ class RefKlasifikasi extends Model
     protected $table = 'ref_klasifikasi';
 
     protected $fillable = [
-        'nama', 'ranking', 'created_at', 'updated_at', 'deleted_at',
+        'nama', 'range_bottom', 'range_top', 'created_at', 'updated_at', 'deleted_at',
     ];
+
+    protected function get_klasifikasi($score)
+    {
+        return $this::whereRaw('? BETWEEN range_bottom AND range_top', $score)->first();
+    }
 
     protected function get_all()
     {

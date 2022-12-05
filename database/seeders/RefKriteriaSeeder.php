@@ -19,7 +19,7 @@ class RefKriteriaSeeder extends Seeder
         $ref_kriteria = [
             [
                 'nama' => 'Pendapatan Keluarga',
-                'bobot' => 0.30
+                'bobot' => 0.35
             ],
             [
                 'nama' => 'Informasi Pendukung',
@@ -31,7 +31,7 @@ class RefKriteriaSeeder extends Seeder
             ],
             [
                 'nama' => 'Kepemilikan Lahan',
-                'bobot' => 0.15
+                'bobot' => 0.10
             ],
             [
                 'nama' => 'Kepemilikan Ternak',

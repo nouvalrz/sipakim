@@ -27,12 +27,13 @@ class AnalisaKeluarga extends Model
         $cal_kepemilikan_ternak = ($potensi_keluarga->ref_kepemilikan_ternak_besar->bobot + $potensi_keluarga->ref_status_kepemilikan_ternak_besar->bobot + $potensi_keluarga->ref_kepemilikan_ternak_kecil->bobot + $potensi_keluarga->ref_status_kepemilikan_ternak_kecil->bobot) * RefKriteria::find(5)->bobot;
 
         $result = $cal_pendapatan + $cal_pendukung_rumah_tangga + $cal_kondisi_rumah + $cal_kepemilikan_lahan + $cal_kepemilikan_ternak;
+        $klasifikasi = RefKlasifikasi::get_klasifikasi($result);
 
         try {
             $analisa_keluarga = $this::create([
                 'potensi_keluarga_id' => $potensi_keluarga->id,
                 'hasil_perhitungan' => $result,
-                'ref_klasifikasi_id' => 1
+                'ref_klasifikasi_id' => $klasifikasi->id
             ]);
         } catch (Throwable $e) {
             $potensi_keluarga = PotensiKeluarga::find($potensi_keluarga->id);
