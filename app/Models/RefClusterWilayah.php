@@ -18,7 +18,7 @@ class RefClusterWilayah extends Model
     {
         return $this::select('kecamatan')
             ->groupBy('kecamatan')
-            ->all();
+            ->get();
     }
 
     protected function get_kelurahan($kecamatan)
@@ -26,7 +26,7 @@ class RefClusterWilayah extends Model
         return $this::select('kelurahan')
             ->where("kecamatan", $kecamatan)
             ->groupBy('kelurahan')
-            ->all();
+            ->get();
     }
 
     protected function get_lingkungan($kecamatan, $kelurahan)
@@ -35,7 +35,7 @@ class RefClusterWilayah extends Model
             ->where("kecamatan", $kecamatan)
             ->where("kelurahan", $kelurahan)
             ->groupBy('lingkungan')
-            ->all();
+            ->get();
     }
 
     protected function get_rw($kecamatan, $kelurahan, $lingkungan)
@@ -45,7 +45,7 @@ class RefClusterWilayah extends Model
             ->where("kelurahan", $kelurahan)
             ->where("lingkungan", $lingkungan)
             ->groupBy('rw')
-            ->all();
+            ->get();
     }
 
     protected function get_rt($kecamatan, $kelurahan, $lingkungan, $rw)
@@ -56,7 +56,7 @@ class RefClusterWilayah extends Model
             ->where("lingkungan", $lingkungan)
             ->where("rw", $rw)
             ->groupBy('rt')
-            ->all();
+            ->get();
     }
 
     protected function get_cluster_id($kecamatan, $kelurahan, $lingkungan, $rw, $rt)

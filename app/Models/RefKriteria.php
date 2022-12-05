@@ -16,7 +16,7 @@ class RefKriteria extends Model
 
     protected function get_all()
     {
-        return $this::All();
+        return $this::get();
     }
 
     protected function get_by_id($id)

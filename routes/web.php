@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InputDataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/input-data-keluarga', function () {
-    return view('input-data-keluarga');
+Route::prefix('input-data-keluarga')->group(function(){
+    Route::get('/', [InputDataController::class, 'index']);
 });
 
 Route::get('/data-keluarga-miskin', function () {

@@ -120,6 +120,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_pendapatan_suami_id') is-invalid @enderror" id="inputPendapatan-Suami" name="ref_pendapatan_suami_id">
                                             <option value="">Pilih Pendapatan Suami</option>
+                                            @foreach ($pendapatan as $ref_pendapatan)
+                                                <option value="{{ $ref_pendapatan->id }}" @if (old('ref_pendapatan_suami_id') == $ref_pendapatan->id) selected @endif>{{ $ref_pendapatan->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_pendapatan_suami_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -131,6 +134,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_pendapatan_istri_id') is-invalid @enderror" id="inputPendapatan-Istri" name="ref_pendapatan_istri_id">
                                             <option value="">Pilih Pendapatan Istri</option>
+                                            @foreach ($pendapatan as $ref_pendapatan)
+                                                <option value="{{ $ref_pendapatan->id }}" @if (old('ref_pendapatan_istri_id') == $ref_pendapatan->id) selected @endif>{{ $ref_pendapatan->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_pendapatan_istri_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -142,6 +148,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_pendapatan_anak_id') is-invalid @enderror" id="inputPendapatan-Anak" name="ref_pendapatan_anak_id">
                                             <option value="">Pilih Pendapatan Anak</option>
+                                            @foreach ($pendapatan as $ref_pendapatan)
+                                                <option value="{{ $ref_pendapatan->id }}" @if (old('ref_pendapatan_anak_id') == $ref_pendapatan->id) selected @endif>{{ $ref_pendapatan->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_pendapatan_anak_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -156,6 +165,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_pendapatan_orangtua_id') is-invalid @enderror" id="inputPendapatan-OrangTua" name="ref_pendapatan_orangtua_id">
                                             <option value="">Pilih Pendapatan Orang Tua</option>
+                                            @foreach ($pendapatan as $ref_pendapatan)
+                                                <option value="{{ $ref_pendapatan->id }}" @if (old('ref_pendapatan_orangtua_id') == $ref_pendapatan->id) selected @endif>{{ $ref_pendapatan->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_pendapatan_orangtua_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -375,6 +387,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_dinding_id') is-invalid @enderror" id="inputRumah-Dinding" name="ref_dinding_id">
                                             <option value="">Pilih Dinding</option>
+                                            @foreach ($dinding as $ref_dinding)
+                                                <option value="{{ $ref_dinding->id }}" @if (old('ref_dinding_id') == $ref_dinding->id) selected @endif>{{ $ref_dinding->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_dinding_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -386,6 +401,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_atap_id') is-invalid @enderror" id="inputRumah-Atap" name="ref_atap_id">
                                             <option value="">Pilih Atap</option>
+                                            @foreach ($atap as $ref_atap)
+                                                <option value="{{ $ref_atap->id }}" @if (old('ref_atap_id') == $ref_atap->id) selected @endif>{{ $ref_atap->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_atap_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -397,6 +415,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_lantai_id') is-invalid @enderror" id="inputRumah-Lantai" name="ref_lantai_id">
                                             <option value="">Pilih Lantai</option>
+                                            @foreach ($lantai as $ref_lantai)
+                                                <option value="{{ $ref_lantai->id }}" @if (old('ref_lantai_id') == $ref_lantai->id) selected @endif>{{ $ref_lantai->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_lantai_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -411,6 +432,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_surat_tanah_id') is-invalid @enderror" id="inputRumah-SuratTanah" name="ref_surat_tanah_id">
                                             <option value="">Pilih Surat Tanah</option>
+                                            @foreach ($surat_tanah as $ref_surat_tanah)
+                                                <option value="{{ $ref_surat_tanah->id }}" @if (old('ref_surat_tanah_id') == $ref_surat_tanah->id) selected @endif>{{ $ref_surat_tanah->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_surat_tanah_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -422,6 +446,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_status_kepemilikan_rumah_id') is-invalid @enderror" id="inputRumah-StatusKepemilikan" name="ref_status_kepemilikan_rumah_id">
                                             <option value="">Pilih Status Kepemilikan</option>
+                                            @foreach ($status_milik_rumah as $ref_status_kepemilikan_rumah)
+                                                <option value="{{ $ref_status_kepemilikan_rumah->id }}" @if (old('ref_status_kepemilikan_rumah_id') == $ref_status_kepemilikan_rumah->id) selected @endif>{{ $ref_status_kepemilikan_rumah->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_status_kepemilikan_rumah_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -433,6 +460,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_ukuran_rumah_id') is-invalid @enderror" id="inputRumah-UkuranTanah" name="ref_ukuran_rumah_id">
                                             <option value="">Pilih Ukuran Tanah</option>
+                                            @foreach ($ukuran_rumah as $ref_ukuran_rumah)
+                                                <option value="{{ $ref_ukuran_rumah->id }}" @if (old('ref_ukuran_rumah_id') == $ref_ukuran_rumah->id) selected @endif>{{ $ref_ukuran_rumah->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_ukuran_rumah_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -447,6 +477,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_luas_pekarangan_id') is-invalid @enderror" id="inputRumah-LuasTanahPekarangan" name="ref_luas_pekarangan_id">
                                             <option value="">Pilih Luas Tanah Pekarangan</option>
+                                            @foreach ($luas_pekarangan as $ref_luas_pekarangan)
+                                                <option value="{{ $ref_luas_pekarangan->id }}" @if (old('ref_luas_pekarangan_id') == $ref_luas_pekarangan->id) selected @endif>{{ $ref_luas_pekarangan->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_luas_pekarangan_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -479,6 +512,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_ukuran_lahan_sawah_id') is-invalid @enderror" id="inputSawah-Ukuran" name="ref_ukuran_lahan_sawah_id">
                                             <option value="">Pilih Ukuran Sawah</option>
+                                            @foreach ($ukuran_lahan as $ref_ukuran_lahan_sawah)
+                                                <option value="{{ $ref_ukuran_lahan_sawah->id }}" @if (old('ref_ukuran_lahan_sawah_id') == $ref_ukuran_lahan_sawah->id) selected @endif>{{ $ref_ukuran_lahan_sawah->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_ukuran_lahan_sawah_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -490,6 +526,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_status_kepemilikan_sawah_id') is-invalid @enderror" id="inputSawah-StatusKepemilikan" name="ref_status_kepemilikan_sawah_id">
                                             <option value="">Pilih Status Kepemilikan</option>
+                                            @foreach ($status_milik_lahan as $ref_status_kepemilikan_sawah)
+                                                <option value="{{ $ref_status_kepemilikan_sawah->id }}" @if (old('ref_status_kepemilikan_sawah_id') == $ref_status_kepemilikan_sawah->id) selected @endif>{{ $ref_status_kepemilikan_sawah->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_status_kepemilikan_sawah_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -520,6 +559,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_ukuran_lahan_kebun_id') is-invalid @enderror" id="inputKebun-Ukuran" name="ref_ukuran_lahan_kebun_id">
                                             <option value="">Pilih Ukuran Kebun</option>
+                                            @foreach ($ukuran_lahan as $ref_ukuran_lahan_kebun)
+                                                <option value="{{ $ref_ukuran_lahan_kebun->id }}" @if (old('ref_ukuran_lahan_kebun_id') == $ref_ukuran_lahan_kebun->id) selected @endif>{{ $ref_ukuran_lahan_kebun->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_ukuran_lahan_kebun_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -531,6 +573,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_status_kepemilikan_kebun_id') is-invalid @enderror" id="inputKebun-StatusKepemilikan" name="ref_status_kepemilikan_kebun_id">
                                             <option value="">Pilih Status Kepemilikan</option>
+                                            @foreach ($status_milik_lahan as $ref_status_kepemilikan_kebun)
+                                                <option value="{{ $ref_status_kepemilikan_kebun->id }}" @if (old('ref_status_kepemilikan_kebun_id') == $ref_status_kepemilikan_kebun->id) selected @endif>{{ $ref_status_kepemilikan_kebun->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_status_kepemilikan_kebun_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -562,6 +607,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_kepemilikan_ternak_besar_id') is-invalid @enderror" id="inputTernakBesar-Kepemilikan" name="ref_kepemilikan_ternak_besar_id">
                                             <option value="">Pilih Kepemilikan Ternak Besar</option>
+                                            @foreach ($kepemilikan_ternak as $ref_kepemilikan_ternak_besar)
+                                                <option value="{{ $ref_kepemilikan_ternak_besar->id }}" @if (old('ref_kepemilikan_ternak_besar_id') == $ref_kepemilikan_ternak_besar->id) selected @endif>{{ $ref_kepemilikan_ternak_besar->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_kepemilikan_ternak_besar_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -573,6 +621,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_status_kepemilikan_ternak_besar_id') is-invalid @enderror" id="inputTernakBesar-StatusKepemilikan" name="ref_status_kepemilikan_ternak_besar_id">
                                             <option value="">Pilih Status Kepemilikan</option>
+                                            @foreach ($status_milik_ternak as $ref_status_kepemilikan_ternak_besar)
+                                                <option value="{{ $ref_status_kepemilikan_ternak_besar->id }}" @if (old('ref_status_kepemilikan_ternak_besar_id') == $ref_status_kepemilikan_ternak_besar->id) selected @endif>{{ $ref_status_kepemilikan_ternak_besar->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_status_kepemilikan_ternak_besar_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -603,6 +654,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_kepemilikan_ternak_kecil_id') is-invalid @enderror" id="inputTernakKecil-Kepemilikan" name="ref_kepemilikan_ternak_kecil_id">
                                             <option value="">Pilih Kepemilikan Ternak Kecil</option>
+                                            @foreach ($kepemilikan_ternak as $ref_kepemilikan_ternak_kecil)
+                                                <option value="{{ $ref_kepemilikan_ternak_kecil->id }}" @if (old('ref_kepemilikan_ternak_kecil_id') == $ref_kepemilikan_ternak_kecil->id) selected @endif>{{ $ref_kepemilikan_ternak_kecil->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_kepemilikan_ternak_kecil_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -614,6 +668,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_status_kepemilikan_ternak_kecil_id') is-invalid @enderror" id="inputTernakKecil-StatusKepemilikan" name="ref_status_kepemilikan_ternak_kecil_id">
                                             <option value="">Pilih Status Kepemilikan</option>
+                                            @foreach ($status_milik_ternak as $ref_status_kepemilikan_ternak_kecil)
+                                                <option value="{{ $ref_status_kepemilikan_ternak_kecil->id }}" @if (old('ref_status_kepemilikan_ternak_kecil_id') == $ref_status_kepemilikan_ternak_kecil->id) selected @endif>{{ $ref_status_kepemilikan_ternak_kecil->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_status_kepemilikan_ternak_kecil_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
