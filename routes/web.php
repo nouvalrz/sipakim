@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InputDataController;
+use App\Http\Controllers\DataKeluargaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,11 +24,13 @@ Route::get('/dashboard', function () {
 });
 
 Route::prefix('input-data-keluarga')->group(function(){
-    Route::get('/', [InputDataController::class, 'index']);
+    Route::get('/', [InputDataController::class, 'index'])->name('input.index');
+    Route::post('/add', [InputDataController::class, 'store'])->name('input.store');
 });
 
-Route::get('/data-keluarga-miskin', function () {
-    return view('data-keluarga-miskin');
+Route::prefix('data-keluarga-miskin')->group(function(){
+    Route::get('/', [DataKeluargaController::class, 'index'])->name('data.index');
+    Route::get('/{id}/show', [DataKeluargaController::class, 'show'])->name('data.show');
 });
 
 Route::get('/informasi-statistik', function () {

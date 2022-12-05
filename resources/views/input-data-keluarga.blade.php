@@ -7,7 +7,8 @@
 @stop
 
 @section('content')
-<form>
+<form action="{{ route('input.store') }}" method="post">
+    @csrf
     <div class="row">
         <div class="col-12">
             <div class="card card-secondary card-primary">
@@ -23,13 +24,13 @@
                         <div class="row">
                             <div class="col-5">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('no_kk') is-invalid @enderror" id="inputNoKartuKeluarga" name="no_kk" placeholder="Nomer Kartu Keluarga (KK)">
+                                    <input type="text" class="form-control @error('no_kk') is-invalid @enderror" id="inputNoKartuKeluarga" name="no_kk" placeholder="Nomer Kartu Keluarga (KK)" value="{{ old('no_kk') }}">
                                     @error('no_kk') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" id="inputTempatLahir" name="tempat_lahir" placeholder="Tempat Lahir">
+                                    <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" id="inputTempatLahir" name="tempat_lahir" placeholder="Tempat Lahir" value="{{ old('tempat_lahir') }}">
                                     @error('tempat_lahir') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
@@ -37,7 +38,7 @@
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-4 col-form-label">Tanggal Lahir</label>
                                     <div class="col-sm-7">
-                                        <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" id="inputTanggalLahir" name="tanggal_lahir" placeholder="Tanggal Lahir">
+                                        <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" id="inputTanggalLahir" name="tanggal_lahir" placeholder="Tanggal Lahir" value="{{ old('tanggal_lahir') }}">
                                         @error('tanggal_lahir') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
                                 </div>
@@ -46,32 +47,32 @@
                         <div class="row">
                             <div class="col-5">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('nik') is-invalid @enderror" id="inputNIK" name="nik" placeholder="Nomor Induk Kependudukan (NIK)">
+                                    <input type="text" class="form-control @error('nik') is-invalid @enderror" id="inputNIK" name="nik" placeholder="Nomor Induk Kependudukan (NIK)" value="{{ old('nik') }}">
                                     @error('nik') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <select class="form-control @error('ref_cluster_wilayah_id') is-invalid @enderror" id="inputClusterWilayah" name="ref_cluster_wilayah_id">
+                                    <select class="form-control @error('cluster_wilayah_id') is-invalid @enderror" id="inputClusterWilayah" name="cluster_wilayah_id">
                                         <option value="">Pilih Cluster Wilayah</option>
                                         @foreach ($cluster_wilayah as $ref_cluster_wilayah)
-                                            <option value="{{ $ref_cluster_wilayah->id }}" @if (old('ref_cluster_wilayah_id') == $ref_cluster_wilayah->id) selected @endif>{{ 'RT '.$ref_cluster_wilayah->rt.' - RW '.$ref_cluster_wilayah->rw.' - Lingk. '.$ref_cluster_wilayah->lingkungan.' - Kel. '.$ref_cluster_wilayah->kelurahan.' - Kec. '.$ref_cluster_wilayah->kecamatan}}</option>
+                                            <option value="{{ $ref_cluster_wilayah->id }}" @if (old('cluster_wilayah_id') == $ref_cluster_wilayah->id) selected @endif>{{ 'RT '.$ref_cluster_wilayah->rt.' - RW '.$ref_cluster_wilayah->rw.' - Lingk. '.$ref_cluster_wilayah->lingkungan.' - Kel. '.$ref_cluster_wilayah->kelurahan.' - Kec. '.$ref_cluster_wilayah->kecamatan}}</option>
                                         @endforeach
                                     </select>
-                                    @error('ref_cluster_wilayah_id') <span class="text-danger">{{$message}}</span> @enderror
+                                    @error('cluster_wilayah_id') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-5">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('nama_kepala') is-invalid @enderror" name="nama_kepala" id="inputNamaKepalaKeluarga" placeholder="Nama Kepala Keluarga">
+                                    <input type="text" class="form-control @error('nama_kepala') is-invalid @enderror" name="nama_kepala" id="inputNamaKepalaKeluarga" placeholder="Nama Kepala Keluarga" value="{{ old('nama_kepala') }}">
                                     @error('nama_kepala') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('jumlah_anggota') is-invalid @enderror" id="inputJumlahAnggotaKeluarga" name="jumlah_anggota" placeholder="Jumlah Anggota Keluarga">
+                                    <input type="text" class="form-control @error('jumlah_anggota') is-invalid @enderror" id="inputJumlahAnggotaKeluarga" name="jumlah_anggota" placeholder="Jumlah Anggota Keluarga" value="{{ old('jumlah_anggota') }}">
                                     @error('jumlah_anggota') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
@@ -180,6 +181,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_alat_transportasi_id') is-invalid @enderror" id="inputRumahTangga-Transportasi" name="ref_alat_transportasi_id">
                                             <option value="">Pilih Alat Transportasi</option>
+                                            @foreach ($alat_transportasi as $ref_alat_transportasi)
+                                                <option value="{{ $ref_alat_transportasi->id }}" @if (old('ref_alat_transportasi_id') == $ref_alat_transportasi->id) selected @endif>{{ $ref_alat_transportasi->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_alat_transportasi_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -191,6 +195,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_alat_penerangan_id') is-invalid @enderror" id="inputRumahTangga-Penerangan" name="ref_alat_penerangan_id">
                                             <option value="">Pilih Alat Penerangan</option>
+                                            @foreach ($alat_penerangan as $ref_alat_penerangan)
+                                                <option value="{{ $ref_alat_penerangan->id }}" @if (old('ref_alat_penerangan_id') == $ref_alat_penerangan->id) selected @endif>{{ $ref_alat_penerangan->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_alat_penerangan_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -202,6 +209,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_daya_listrik_id') is-invalid @enderror" id="inputRumahTangga-DayaListrik" name="ref_daya_listrik_id">
                                             <option value="">Pilih Daya Listrik</option>
+                                            @foreach ($daya_listrik as $ref_daya_listrik)
+                                                <option value="{{ $ref_daya_listrik->id }}" @if (old('ref_daya_listrik_id') == $ref_daya_listrik->id) selected @endif>{{ $ref_daya_listrik->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_daya_listrik_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -217,6 +227,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_sarana_air_bersih_id') is-invalid @enderror" id="inputRumahTangga-SaranaAirBersih" name="ref_sarana_air_bersih_id">
                                             <option value="">Pilih Sarana Air Bersih</option>
+                                            @foreach ($sarana_air_bersih as $ref_sarana_air_bersih)
+                                                <option value="{{ $ref_sarana_air_bersih->id }}" @if (old('ref_sarana_air_bersih_id') == $ref_sarana_air_bersih->id) selected @endif>{{ $ref_sarana_air_bersih->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_sarana_air_bersih_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -228,6 +241,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_kemampuan_berobat_id') is-invalid @enderror" id="inputRumahTangga-KemampuanBerobat" name="ref_kemampuan_berobat_id">
                                             <option value="">Pilih Kemampuan Berobat</option>
+                                            @foreach ($kemampuan_berobat as $ref_kemampuan_berobat)
+                                                <option value="{{ $ref_kemampuan_berobat->id }}" @if (old('ref_kemampuan_berobat_id') == $ref_kemampuan_berobat->id) selected @endif>{{ $ref_kemampuan_berobat->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_kemampuan_berobat_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -239,14 +255,15 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_jenis_jamban_id') is-invalid @enderror" id="inputRumahTangga-JenisJamban" name="ref_jenis_jamban_id">
                                             <option value="">Pilih Jenis Jamban</option>
+                                            @foreach ($jenis_jamban as $ref_jenis_jamban)
+                                                <option value="{{ $ref_jenis_jamban->id }}" @if (old('ref_jenis_jamban_id') == $ref_jenis_jamban->id) selected @endif>{{ $ref_jenis_jamban->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_jenis_jamban_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-group row">
@@ -254,6 +271,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_jenis_septitank_id') is-invalid @enderror" id="inputRumahTangga-Septitank" name="ref_jenis_septitank_id">
                                             <option value="">Pilih Jenis Septitank</option>
+                                            @foreach ($jenis_septitank as $ref_jenis_septitank)
+                                                <option value="{{ $ref_jenis_septitank->id }}" @if (old('ref_jenis_septitank_id') == $ref_jenis_septitank->id) selected @endif>{{ $ref_jenis_septitank->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_jenis_septitank_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -265,6 +285,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_bahan_bakar_id') is-invalid @enderror" id="inputRumahTangga-BahanBakar" name="ref_bahan_bakar_id">
                                             <option value="">Pilih Bahan Bakar</option>
+                                            @foreach ($bahan_bakar as $ref_bahan_bakar)
+                                                <option value="{{ $ref_bahan_bakar->id }}" @if (old('ref_bahan_bakar_id') == $ref_bahan_bakar->id) selected @endif>{{ $ref_bahan_bakar->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_bahan_bakar_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -276,6 +299,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_jenis_pembuangan_id') is-invalid @enderror" id="inputRumahTangga-JenisPembuangan" name="ref_jenis_pembuangan_id">
                                             <option value="">Pilih Jenis Pembuangan</option>
+                                            @foreach ($jenis_pembuangan as $ref_jenis_pembuangan)
+                                                <option value="{{ $ref_jenis_pembuangan->id }}" @if (old('ref_jenis_pembuangan_id') == $ref_jenis_pembuangan->id) selected @endif>{{ $ref_jenis_pembuangan->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_jenis_pembuangan_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -290,6 +316,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_jenis_pemilahan_id') is-invalid @enderror" id="inputRumahTangga-Pemilahan" name="ref_jenis_pemilahan_id">
                                             <option value="">Pilih Jenis Pemilahan</option>
+                                            @foreach ($jenis_pemilahan as $ref_jenis_pemilahan)
+                                                <option value="{{ $ref_jenis_pemilahan->id }}" @if (old('ref_jenis_pemilahan_id') == $ref_jenis_pemilahan->id) selected @endif>{{ $ref_jenis_pemilahan->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_jenis_pemilahan_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -301,6 +330,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_kepemilikan_tabungan_id') is-invalid @enderror" id="inputRumahTangga-KepemilikanTabungan" name="ref_kepemilikan_tabungan_id">
                                             <option value="">Pilih Kepemilikan Tabungan</option>
+                                            @foreach ($kepemilikan_tabungan as $ref_kepemilikan_tabungan)
+                                                <option value="{{ $ref_kepemilikan_tabungan->id }}" @if (old('ref_kepemilikan_tabungan_id') == $ref_kepemilikan_tabungan->id) selected @endif>{{ $ref_kepemilikan_tabungan->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_kepemilikan_tabungan_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -312,6 +344,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_kepemilikan_emas_id') is-invalid @enderror" id="inputRumahTangga-KepemilikanEmas" name="ref_kepemilikan_emas_id">
                                             <option value="">Pilih Kepemilikan Emas</option>
+                                            @foreach ($kepemilikan_emas as $ref_kepemilikan_emas)
+                                                <option value="{{ $ref_kepemilikan_emas->id }}" @if (old('ref_kepemilikan_emas_id') == $ref_kepemilikan_emas->id) selected @endif>{{ $ref_kepemilikan_emas->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_kepemilikan_emas_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -326,6 +361,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_sarana_prasarana_id') is-invalid @enderror" id="inputRumahTangga-SarprasKeluarga" name="ref_sarana_prasarana_id">
                                             <option value="">Pilih Sarpras</option>
+                                            @foreach ($sarana_prasarana as $ref_sarana_prasarana)
+                                                <option value="{{ $ref_sarana_prasarana->id }}" @if (old('ref_sarana_prasarana_id') == $ref_sarana_prasarana->id) selected @endif>{{ $ref_sarana_prasarana->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_sarana_prasarana_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -337,6 +375,9 @@
                                     <div class="col-sm-8">
                                         <select class="form-control @error('ref_kemampuan_beli_pakaian_id') is-invalid @enderror" id="inputRumahTangga-BeliPakaian" name="ref_kemampuan_beli_pakaian_id">
                                             <option value="">Pilih Kemampuan Beli Pakaian</option>
+                                            @foreach ($kemampuan_beli_pakaian as $ref_kemampuan_beli_pakaian)
+                                                <option value="{{ $ref_kemampuan_beli_pakaian->id }}" @if (old('ref_kemampuan_beli_pakaian_id') == $ref_kemampuan_beli_pakaian->id) selected @endif>{{ $ref_kemampuan_beli_pakaian->nama }}</option>
+                                            @endforeach
                                         </select>
                                         @error('ref_kemampuan_beli_pakaian_id') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
@@ -662,5 +703,9 @@
             </div>
         </div>
     </div>
+    <button type="submit" class="btn btn-primary">Simpan</button>
+    <a href="" class="btn btn-default">
+        Batal
+    </a>
 </form>
 @stop

@@ -3,8 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Keluarga;
 use App\Models\RefClusterWilayah;
 use App\Models\RefPendapatan;
+use App\Models\RefAlatTransportasi;
+use App\Models\RefAlatPenerangan;
+use App\Models\RefDayaListrik;
+use App\Models\RefSaranaAirBersih;
+use App\Models\RefKemampuanBerobat;
+use App\Models\RefJenisJamban;
+use App\Models\RefJenisSeptitank;
+use App\Models\RefBahanBakar;
+use App\Models\RefJenisPembuangan;
+use App\Models\RefJenisPemilahan;
+use App\Models\RefKepemilikanTabungan;
+use App\Models\RefKepemilikanEmas;
+use App\Models\RefSaranaPrasarana;
+use App\Models\RefKemampuanBeliPakaian;
 use App\Models\RefDinding;
 use App\Models\RefAtap;
 use App\Models\RefLantai;
@@ -31,7 +46,20 @@ class InputDataController extends Controller
         // Input Pendapatan
         $pendapatan = RefPendapatan::get_all();
         // Input Pendukung Rumah Tangga
-
+        $alat_transportasi = RefAlatTransportasi::get_all();
+        $alat_penerangan = RefAlatPenerangan::get_all();
+        $daya_listrik = RefDayaListrik::get_all();
+        $sarana_air_bersih = RefSaranaAirBersih::get_all();
+        $kemampuan_berobat = RefKemampuanBerobat::get_all();
+        $jenis_jamban = RefJenisJamban::get_all();
+        $jenis_septitank = RefJenisSeptitank::get_all();
+        $bahan_bakar = RefBahanBakar::get_all();
+        $jenis_pembuangan = RefJenisPembuangan::get_all();
+        $jenis_pemilahan = RefJenisPemilahan::get_all();
+        $kepemilikan_tabungan = RefKepemilikanTabungan::get_all();
+        $kepemilikan_emas = RefKepemilikanEmas::get_all();
+        $sarana_prasarana = RefSaranaPrasarana::get_all();
+        $kemampuan_beli_pakaian = RefKemampuanBeliPakaian::get_all();
         // Input Rumah
         $dinding = RefDinding::get_all();
         $atap = RefAtap::get_all();
@@ -50,6 +78,20 @@ class InputDataController extends Controller
         return view('input-data-keluarga', [
             'cluster_wilayah' => $cluster_wilayah,
             'pendapatan' => $pendapatan,
+            'alat_transportasi' => $alat_transportasi,
+            'alat_penerangan' => $alat_penerangan,
+            'daya_listrik' => $daya_listrik,
+            'sarana_air_bersih' => $sarana_air_bersih,
+            'kemampuan_berobat' => $kemampuan_berobat,
+            'jenis_jamban' => $jenis_jamban,
+            'jenis_septitank' => $jenis_septitank,
+            'bahan_bakar' => $bahan_bakar,
+            'jenis_pembuangan' => $jenis_pembuangan,
+            'jenis_pemilahan' => $jenis_pemilahan,
+            'kepemilikan_tabungan' => $kepemilikan_tabungan,
+            'kepemilikan_emas' => $kepemilikan_emas,
+            'sarana_prasarana' => $sarana_prasarana,
+            'kemampuan_beli_pakaian' => $kemampuan_beli_pakaian,
             'dinding' => $dinding,
             'atap' => $atap,
             'lantai' => $lantai,
@@ -82,7 +124,15 @@ class InputDataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input_data_keluarga = Keluarga::add_data($request);
+        if ($input_data_keluarga === true) {
+            return redirect()->route('data.index')
+                ->with('success_message', 'Berhasil tambah data');
+        }
+
+        return redirect()->back()
+            ->withInput()
+            ->with('error_message', 'Gagal tambah data');
     }
 
     /**
