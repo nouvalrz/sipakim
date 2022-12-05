@@ -17,14 +17,13 @@ class RefKepemilikanTabunganSeeder extends Seeder
     {
         DB::table('ref_kepemilikan_tabungan')->delete();
         $ref_kepemilikan_tabungan = [
-
             [
-                'nama' => 'Ada Tabungan',
+                'nama' => 'Tidak Ada Tabungan',
                 'bobot' => 2,
                 'ref_kriteria_id' => 2
             ],
             [
-                'nama' => 'Tidak Ada Tabungan',
+                'nama' => 'Ada Tabungan',
                 'bobot' => 1,
                 'ref_kriteria_id' => 2
             ],

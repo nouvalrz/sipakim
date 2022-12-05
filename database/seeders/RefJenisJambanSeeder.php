@@ -19,26 +19,21 @@ class RefJenisJambanSeeder extends Seeder
         $ref_jenis_jamban = [
             [
                 'nama' => 'Tidak Ada',
-                'bobot' => 5,
-                'ref_kriteria_id' => 2
-            ],
-            [
-                'nama' => 'Pustu',
                 'bobot' => 4,
                 'ref_kriteria_id' => 2
             ],
             [
-                'nama' => 'RSU / Puskesmas',
+                'nama' => 'Jamban Umum',
                 'bobot' => 3,
                 'ref_kriteria_id' => 2
             ],
             [
-                'nama' => 'Dokter Umum',
+                'nama' => 'Jamban Cemplung',
                 'bobot' => 2,
                 'ref_kriteria_id' => 2
             ],
             [
-                'nama' => 'Dokter Spesialis',
+                'nama' => 'Jamban Permanen',
                 'bobot' => 1,
                 'ref_kriteria_id' => 2
             ],

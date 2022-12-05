@@ -17,14 +17,13 @@ class RefSaranaPrasaranaSeeder extends Seeder
     {
         DB::table('ref_sarana_prasarana')->delete();
         $ref_sarana_prasarana = [
-
             [
-                'nama' => 'Ada',
+                'nama' => 'Tidak Ada',
                 'bobot' => 2,
                 'ref_kriteria_id' => 2
             ],
             [
-                'nama' => 'Tidak Ada',
+                'nama' => 'Ada',
                 'bobot' => 1,
                 'ref_kriteria_id' => 2
             ],

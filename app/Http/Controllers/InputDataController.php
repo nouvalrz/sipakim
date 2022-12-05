@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Keluarga;
+use App\Models\PotensiKeluarga;
 use App\Models\RefClusterWilayah;
 use App\Models\RefPendapatan;
 use App\Models\RefAlatTransportasi;
@@ -124,12 +125,23 @@ class InputDataController extends Controller
      */
     public function store(Request $request)
     {
-        $input_data_keluarga = Keluarga::add_data($request);
-        if ($input_data_keluarga === true) {
+        $keluarga = Keluarga::add_data($request);
+        if ($keluarga === true) {
             return redirect()->route('data.index')
                 ->with('success_message', 'Berhasil tambah data');
         }
 
+        list($result, $validator) = PotensiKeluarga::add_data($request, $keluarga);
+        if ($result === true) {
+            return redirect()->route('data.index')
+                ->with('success_message', 'Berhasil tambah data');
+        } else if ($result === false && !is_null($validator)) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors($validator)
+                ->with('error_message', 'Gagal tambah data');
+        }
+        
         return redirect()->back()
             ->withInput()
             ->with('error_message', 'Gagal tambah data');

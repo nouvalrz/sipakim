@@ -17,14 +17,13 @@ class RefKepemilikanEmasSeeder extends Seeder
     {
         DB::table('ref_kepemilikan_emas')->delete();
         $ref_kepemilikan_emas = [
-
             [
-                'nama' => 'Ada Emas',
+                'nama' => 'Tidak Ada Emas',
                 'bobot' => 2,
                 'ref_kriteria_id' => 2
             ],
             [
-                'nama' => 'Tidak Ada Emas',
+                'nama' => 'Ada Emas',
                 'bobot' => 1,
                 'ref_kriteria_id' => 2
             ],
