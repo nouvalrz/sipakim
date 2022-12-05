@@ -17,7 +17,9 @@ class DatabaseSeeder extends Seeder
             RefKriteriaSeeder::class,
             RefPendapatanSeeder::class,
             RefUkuranLahanSeeder::class,
-            RefStatusKepemilikanLahanSeeder::class
+            RefStatusKepemilikanLahanSeeder::class,
+            RefKepemilikanTernakSeeder::class,
+            RefStatusKepemilikanTernakSeeder::class
         ]);
     }
 }
