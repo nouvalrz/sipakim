@@ -14,13 +14,20 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            RefAtapSeeder::class,
             RefClusterWilayahSeeder::class,
-            RefKriteriaSeeder::class,
-            RefPendapatanSeeder::class,
-            RefUkuranLahanSeeder::class,
-            RefStatusKepemilikanLahanSeeder::class,
+            RefDindingSeeder::class,
             RefKepemilikanTernakSeeder::class,
-            RefStatusKepemilikanTernakSeeder::class
+            RefKriteriaSeeder::class,
+            RefLantaiSeeder::class,
+            RefLuasPekaranganSeeder::class,
+            RefPendapatanSeeder::class,
+            RefStatusKepemilikanLahanSeeder::class,
+            RefStatusKepemilikanRumahSeeder::class,
+            RefStatusKepemilikanTernakSeeder::class,
+            RefSuratTanahSeeder::class,
+            RefUkuranLahanSeeder::class,
+            RefUkuranRumahSeeder::class
         ]);
     }
 }
