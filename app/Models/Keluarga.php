@@ -68,4 +68,9 @@ class Keluarga extends Model
     {
         return $this->belongsTo('App\Models\RefJumlahAnggota', 'jumlah_anggota_id');
     }
+
+    protected function potensi_keluarga()
+    {
+        return $this->hasOne('App\Models\PotensiKeluarga');
+    }
 }

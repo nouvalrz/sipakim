@@ -49,8 +49,8 @@
                                     <td>
                                         {{ 'RT '.$keluarga->cluster_wilayah->rt.' - RW '.$keluarga->cluster_wilayah->rw.' - Lingk. '.$keluarga->cluster_wilayah->lingkungan.' - Kel. '.$keluarga->cluster_wilayah->kelurahan.' - Kec. '.$keluarga->cluster_wilayah->kecamatan }}
                                     </td>
-                                    <td>
-                                        //
+                                    <td style="text-align: center;">
+                                        Keluarga {{ $keluarga->potensi_keluarga->analisa_keluarga->ref_klasifikasi->nama }}
                                     </td>
                                     <td style="text-align: center;">
                                         <a href="" class="btn btn-secondary btn-xs">

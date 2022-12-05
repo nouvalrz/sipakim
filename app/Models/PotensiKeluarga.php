@@ -275,4 +275,9 @@ class PotensiKeluarga extends Model
     {
         return $this->belongsTo('App\Models\RefStatusKepemilikanTernak', 'ref_status_kepemilikan_ternak_kecil_id');
     }
+
+    protected function analisa_keluarga()
+    {
+        return $this->hasOne('App\Models\AnalisaKeluarga');
+    }
 }
