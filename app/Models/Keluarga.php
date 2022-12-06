@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Imports\KeluargaImport;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
+use DB;
 
 class Keluarga extends Model
 {
@@ -20,6 +21,35 @@ class Keluarga extends Model
     protected function get_all()
     {
         return $this::get();
+    }
+
+    protected function get_statistik()
+    {
+        $statistik = DB::select('SELECT a.kecamatan AS kecamatan, a.kelurahan AS kelurahan, a.lingkungan AS lingkungan, a.rw AS rw, a.rt AS rt,
+        (SELECT COUNT(k1.id) FROM keluarga k1 
+        JOIN potensi_keluarga pk1 ON k1.id=pk1.keluarga_id 
+        JOIN analisa_keluarga ak1 ON pk1.id=ak1.potensi_keluarga_id 
+        WHERE k1.cluster_wilayah_id = a.id AND ak1.ref_klasifikasi_id = 1) AS miskin,
+        
+        (SELECT COUNT(k2.id) FROM keluarga k2 
+        JOIN potensi_keluarga pk2 ON k2.id=pk2.keluarga_id 
+        JOIN analisa_keluarga ak2 ON pk2.id=ak2.potensi_keluarga_id 
+        WHERE k2.cluster_wilayah_id = a.id AND ak2.ref_klasifikasi_id = 2) AS tidak_miskin
+        FROM ref_cluster_wilayah a;');
+        return $statistik;
+    }
+
+    protected function get_total_statistik()
+    {
+        $total_statistik = DB::select('SELECT (SELECT COUNT(keluarga.id) FROM keluarga 
+        JOIN potensi_keluarga ON keluarga.id=potensi_keluarga.keluarga_id 
+        JOIN analisa_keluarga ON potensi_keluarga.id=analisa_keluarga.potensi_keluarga_id
+        WHERE analisa_keluarga.ref_klasifikasi_id = 1) AS miskin,
+        (SELECT COUNT(keluarga.id) FROM keluarga 
+        JOIN potensi_keluarga ON keluarga.id=potensi_keluarga.keluarga_id 
+        JOIN analisa_keluarga ON potensi_keluarga.id=analisa_keluarga.potensi_keluarga_id
+        WHERE analisa_keluarga.ref_klasifikasi_id = 2) AS tidak_miskin');
+        return $total_statistik;
     }
 
     protected function add_data($request)
