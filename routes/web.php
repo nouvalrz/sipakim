@@ -26,6 +26,7 @@ Route::get('/dashboard', function () {
 Route::prefix('input-data-keluarga')->group(function(){
     Route::get('/', [InputDataController::class, 'index'])->name('input.index');
     Route::post('/add', [InputDataController::class, 'store'])->name('input.store');
+    Route::post('/import', [InputDataController::class, 'import'])->name('input.import');
 });
 
 Route::prefix('data-keluarga-miskin')->group(function(){

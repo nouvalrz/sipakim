@@ -7,11 +7,43 @@
 @stop
 
 @section('content')
-<form action="{{ route('input.store') }}" method="post">
+<form action="{{ route('input.import') }}" method="post">
     @csrf
     <div class="row">
         <div class="col-12">
             <div class="card card-secondary card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Import Data Keluarga</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input @error('file_import') is-invalid @enderror" id="inputFile" name="file_import" aria-describedby="inputGroupFileAddon04">
+                                    <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Import</button>
+                                </div>
+                            </div>
+                            @error('file_import') <span class="text-danger">{{$message}}</span> @enderror
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form action="{{ route('input.store') }}" method="post">
+    @csrf
+    <div class="row">
+        <div class="col-12">
+            <div class="card collapsed-card">
                 <div class="card-header">
                     <h3 class="card-title">Input Informasi Dasar Kepala Keluarga</h3>
                     <div class="card-tools">
