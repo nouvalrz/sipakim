@@ -19,18 +19,13 @@ class RefKlasifikasiSeeder extends Seeder
         $ref_klasifikasi = [
             [
                 'nama' => 'Miskin',
-                'range_bottom' => 22.00,
+                'range_bottom' => 20.00,
                 'range_top' => 30.75
             ],
             [
-                'nama' => 'Menengah',
-                'range_bottom' => 7.11,
-                'range_top' => 21.99
-            ],
-            [
-                'nama' => 'Kaya',
-                'range_bottom' => 0,
-                'range_top' => 7.10
+                'nama' => 'Tidak Miskin',
+                'range_bottom' => 7.10,
+                'range_top' => 19.99
             ],
         ];
         RefKlasifikasi::insert($ref_klasifikasi);
