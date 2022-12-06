@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Imports\KeluargaImport;
+use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Keluarga extends Model
 {
@@ -45,6 +48,24 @@ class Keluarga extends Model
             return false;
         }
         return $data;
+    }
+
+    protected function import_data($request)
+    {
+        $request->validate([
+            'file_import' => 'required|mimes:csv,xls,xlsx'
+        ]);
+
+        try {
+            $file = $request->file('file_import');
+            $filename = $file->hashName();
+            $path = $file->storeAs('public/excel/', $filename);
+            $import = Excel::import(new KeluargaImport(), storage_path('app/public/excel/'.$filename));
+            Storage::delete($path);
+        } catch (Throwable $e) {
+            return false;
+        }
+        return true;
     }
 
     protected function delete_data($id)

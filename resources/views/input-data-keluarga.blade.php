@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="{{ route('input.import') }}" method="post">
+<form action="{{ route('input.import') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-12">

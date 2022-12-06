@@ -28,17 +28,17 @@ class RefPendapatanSeeder extends Seeder
                 'ref_kriteria_id' => 1
             ],
             [
-                'nama' => 'Rp2.500.000 - Rp.5.000.000',
+                'nama' => 'Rp2.500.000 - Rp.3.500.000',
                 'bobot' => 3,
                 'ref_kriteria_id' => 1
             ],
             [
-                'nama' => 'Rp5.000.000 - Rp10.000.000',
+                'nama' => 'Rp3.500.000 - Rp5.000.000',
                 'bobot' => 2,
                 'ref_kriteria_id' => 1
             ],
             [
-                'nama' => '> Rp10.000.000',
+                'nama' => '> Rp5.000.000',
                 'bobot' => 1,
                 'ref_kriteria_id' => 1
             ],
