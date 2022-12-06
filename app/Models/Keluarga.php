@@ -25,7 +25,7 @@ class Keluarga extends Model
     protected function add_data($request)
     {
         $request->validate([
-            'no_kk' => 'required', 
+            'no_kk' => 'required',
             'nik' => 'required',
             'nama_kepala' => 'required',
             'tempat_lahir' => 'required',
@@ -36,18 +36,46 @@ class Keluarga extends Model
 
         try {
             $data = $this::create([
-                'no_kk' => $request->no_kk, 
+                'no_kk' => $request->no_kk,
                 'nik' => $request->nik,
                 'nama_kepala' => $request->nama_kepala,
                 'tempat_lahir' => $request->tempat_lahir,
                 'tanggal_lahir' => $request->tanggal_lahir,
-                'cluster_wilayah_id' => $request->cluster_wilayah_id, 
+                'cluster_wilayah_id' => $request->cluster_wilayah_id,
                 'jumlah_anggota' => $request->jumlah_anggota
             ]);
         } catch (Throwable $e) {
             return false;
         }
         return $data;
+    }
+
+    protected function edit_data($request, $keluarga)
+    {
+        $request->validate([
+            'no_kk' => 'required',
+            'nik' => 'required',
+            'nama_kepala' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'cluster_wilayah_id' => 'required',
+            'jumlah_anggota' => 'required'
+        ]);
+
+        try {
+            $keluarga->update([
+                'no_kk' => $request->no_kk,
+                'nik' => $request->nik,
+                'nama_kepala' => $request->nama_kepala,
+                'tempat_lahir' => $request->tempat_lahir,
+                'tanggal_lahir' => $request->tanggal_lahir,
+                'cluster_wilayah_id' => $request->cluster_wilayah_id,
+                'jumlah_anggota' => $request->jumlah_anggota
+            ]);
+        } catch (Throwable $e) {
+            return false;
+        }
+        return $keluarga;
     }
 
     protected function import_data($request)
@@ -73,7 +101,7 @@ class Keluarga extends Model
         $keluarga = $this::Find($id);
         $potensi_keluarga = PotensiKeluarga::where('keluarga_id', $keluarga->id)->first();
         $analisa_keluarga = AnalisaKeluarga::where('potensi_keluarga_id', $potensi_keluarga->id)->first();
-        
+
         if ($analisa_keluarga->delete() && $potensi_keluarga->delete() && $keluarga->delete()) {
             return true;
         }

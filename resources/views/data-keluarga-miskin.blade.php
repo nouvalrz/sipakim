@@ -56,15 +56,15 @@
                                         <a href="" class="btn btn-secondary btn-xs">
                                             Show
                                         </a>
-                                        <a href="" class="btn btn-info btn-xs">
+                                        <a href="{{ route('data.edit', $keluarga->id) }}" class="btn btn-info btn-xs">
                                             Edit
                                         </a>
                                         <a href="{{ route('data.delete', $keluarga->id) }}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
                                             Delete
                                         </a>
-                                    </td>              
+                                    </td>
                                 </tr>
-                            @endforeach  
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -89,7 +89,7 @@
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#d33',
-                confirmButtonText: 'Hapus',                
+                confirmButtonText: 'Hapus',
             }).then((result) => {
                 if (result.value) {
                     $("#delete-form").attr('action', $(el).attr('href'));
