@@ -52,6 +52,16 @@ class DataKeluargaController extends Controller
         ]);
     }
 
+    public function statistik()
+    {
+        $data_statistik = Keluarga::get_statistik();
+        $total_statistik = Keluarga::get_total_statistik();
+        return view('informasi-statistik', [
+            'data_statistik' => $data_statistik,
+            'total_statistik' => $total_statistik
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

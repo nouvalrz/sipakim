@@ -42,9 +42,8 @@ Route::prefix('data-keluarga-miskin')->group(function(){
     Route::delete('/{id}/delete', [DataKeluargaController::class, 'destroy'])->name('data.delete');
 });
 
-Route::get('/informasi-statistik', function () {
-    return view('informasi-statistik');
-});
+Route::get('/informasi-statistik', [DataKeluargaController::class, 'statistik'])->name('data.statistik');
+
 Route::get('/profile/settings', function () {
     return view('profile');
 });
