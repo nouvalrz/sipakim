@@ -17,7 +17,7 @@
                                 <th style="text-align: center;">No</th>
                                 <th>Nomor KK</th>
                                 <th>NIK</th>
-                                <th>Nama</th>
+                                <th>Nama Kepala</th>
                                 <th>Alamat</th>
                                 <th style="text-align: center;">Klasifikasi</th>
                                 <th style="text-align: center;"></th>

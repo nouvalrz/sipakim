@@ -32,6 +32,8 @@ use App\Models\RefUkuranLahan;
 use App\Models\RefStatusKepemilikanLahan;
 use App\Models\RefKepemilikanTernak;
 use App\Models\RefStatusKepemilikanTernak;
+use App\Imports\KeluargaImport;
+use Illuminate\Support\Facades\Storage;
 
 
 class InputDataController extends Controller
@@ -145,6 +147,27 @@ class InputDataController extends Controller
         return redirect()->back()
             ->withInput()
             ->with('error_message', 'Gagal tambah data');
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file_import' => 'required|mimes:csv,xls,xlsx'
+        ]);
+
+        $file = $request->file('file_import');
+        $filename = $file->hashName();
+        $path = $file->storeAs('public/excel/', '$filename');
+        $import = Excel::import(new KeluargaImport(), storage_path('app/public/excel/'.$filename));
+        Storage::delete($path);
+
+        if ($import === true) {
+            return redirect()->route('data.index')
+                ->with('success_message', 'Berhasil mengimport data');
+        } else {
+            return redirect()->route('input.index')
+                ->with('error_message', 'Gagal mengimport data');
+        }
     }
 
     /**
