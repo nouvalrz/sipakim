@@ -50,7 +50,8 @@
                                         {{ 'RT '.$keluarga->cluster_wilayah->rt.' - RW '.$keluarga->cluster_wilayah->rw.' - Lingk. '.$keluarga->cluster_wilayah->lingkungan.' - Kel. '.$keluarga->cluster_wilayah->kelurahan.' - Kec. '.$keluarga->cluster_wilayah->kecamatan }}
                                     </td>
                                     <td style="text-align: center;">
-                                        Keluarga {{ $keluarga->potensi_keluarga->analisa_keluarga->ref_klasifikasi->nama }}
+                                        <span class="badge @if($keluarga->potensi_keluarga->analisa_keluarga->ref_klasifikasi->id == 1) bg-danger @else bg-success  @endif">Keluarga {{ $keluarga->potensi_keluarga->analisa_keluarga->ref_klasifikasi->nama }}</span>
+
                                     </td>
                                     <td style="text-align: center;">
                                         <a href="" class="btn btn-secondary btn-xs">

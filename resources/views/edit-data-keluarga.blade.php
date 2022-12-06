@@ -3,7 +3,7 @@
 @section('title', 'Input Data Keluarga')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">Input Data Keluarga</h1>
+    <h1 class="m-0 text-dark">Edit Data Keluarga</h1>
 @stop
 
 @section('content')
