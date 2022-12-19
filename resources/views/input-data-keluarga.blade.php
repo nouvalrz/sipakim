@@ -56,7 +56,7 @@
                         <div class="row">
                             <div class="col-5">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('no_kk') is-invalid @enderror" id="inputNoKartuKeluarga" name="no_kk" placeholder="Nomer Kartu Keluarga (KK)" value="{{ old('no_kk') }}">
+                                    <input type="number" class="form-control @error('no_kk') is-invalid @enderror" id="inputNoKartuKeluarga" name="no_kk" placeholder="Nomer Kartu Keluarga (KK)" value="{{ old('no_kk') }}">
                                     @error('no_kk') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-4 col-form-label">Tanggal Lahir</label>
                                     <div class="col-sm-7">
-                                        <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" id="inputTanggalLahir" name="tanggal_lahir" placeholder="Tanggal Lahir" value="{{ old('tanggal_lahir') }}">
+                                        <input type="date" max="{{ date('Y-m-d') }}" class="form-control @error('tanggal_lahir') is-invalid @enderror" id="inputTanggalLahir" name="tanggal_lahir" placeholder="Tanggal Lahir" value="{{ old('tanggal_lahir') }}">
                                         @error('tanggal_lahir') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                         <div class="row">
                             <div class="col-5">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('nik') is-invalid @enderror" id="inputNIK" name="nik" placeholder="Nomor Induk Kependudukan (NIK)" value="{{ old('nik') }}">
+                                    <input type="number" class="form-control @error('nik') is-invalid @enderror" id="inputNIK" name="nik" placeholder="Nomor Induk Kependudukan (NIK)" value="{{ old('nik') }}">
                                     @error('nik') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
@@ -741,3 +741,22 @@
     </a>
 </form>
 @stop
+
+<script>
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("inputTanggalLahir").setAttribute("max", today);
+</script>
+
