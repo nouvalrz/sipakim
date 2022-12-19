@@ -98,13 +98,13 @@
                         <div class="row">
                             <div class="col-5">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('nama_kepala') is-invalid @enderror" name="nama_kepala" id="inputNamaKepalaKeluarga" placeholder="Nama Kepala Keluarga" value="{{ old('nama_kepala') }}">
+                                    <input type="text" class="form-control @error('nama_kepala') is-invalid @enderror" name="nama_kepala" id="inputNamaKepalaKeluarga"  placeholder="Nama Kepala Keluarga" value="{{ old('nama_kepala') }}">
                                     @error('nama_kepala') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('jumlah_anggota') is-invalid @enderror" id="inputJumlahAnggotaKeluarga" name="jumlah_anggota" placeholder="Jumlah Anggota Keluarga" value="{{ old('jumlah_anggota') }}">
+                                    <input type="number" class="form-control @error('jumlah_anggota') is-invalid @enderror" id="inputJumlahAnggotaKeluarga" name="jumlah_anggota" placeholder="Jumlah Anggota Keluarga" value="{{ old('jumlah_anggota') }}">
                                     @error('jumlah_anggota') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
@@ -740,23 +740,16 @@
         Batal
     </a>
 </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    function alphaOnly(event) {
+       var value = String.fromCharCode(event.which);
+       var pattern = new RegExp(/[a-zA-Z]/i);
+       return pattern.test(value);
+    }
+
+    $('#inputNamaKepalaKeluarga').bind('keypress', alphaOnly);
+</script>
 @stop
 
-<script>
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1; //January is 0!
-    var yyyy = today.getFullYear();
-
-    if (dd < 10) {
-        dd = '0' + dd;
-    }
-
-    if (mm < 10) {
-        mm = '0' + mm;
-    }
-
-    today = yyyy + '-' + mm + '-' + dd;
-    document.getElementById("inputTanggalLahir").setAttribute("max", today);
-</script>
 

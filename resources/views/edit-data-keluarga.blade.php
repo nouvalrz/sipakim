@@ -133,7 +133,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('jumlah_anggota') is-invalid @enderror"
+                                    <input type="number" class="form-control @error('jumlah_anggota') is-invalid @enderror"
                                         id="inputJumlahAnggotaKeluarga" name="jumlah_anggota"
                                         placeholder="Jumlah Anggota Keluarga" value="{{ $keluarga->jumlah_anggota }}">
                                     @error('jumlah_anggota')
@@ -986,4 +986,14 @@
             Batal
         </a>
     </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    function alphaOnly(event) {
+       var value = String.fromCharCode(event.which);
+       var pattern = new RegExp(/[a-zA-Z]/i);
+       return pattern.test(value);
+    }
+
+    $('#inputNamaKepalaKeluarga').bind('keypress', alphaOnly);
+</script>
 @stop
